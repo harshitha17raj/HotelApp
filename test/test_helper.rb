@@ -3,6 +3,7 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
+<<<<<<< HEAD
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
   def is_logged_in?
@@ -21,6 +22,15 @@ class ActionDispatch::IntegrationTest
                                           password: password,
                                           remember_me: remember_me } }
   end
+=======
+  fixtures :all
+    def is_logged_in?
+    !session[:user_id].nil?
+  end
+
+  include ApplicationHelper
+
+>>>>>>> d810a459bf60867128d482325070112554ad159a
 
   # Add more helper methods to be used by all tests here...
 end

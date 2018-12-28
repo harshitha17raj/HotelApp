@@ -4,6 +4,7 @@ module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
+<<<<<<< HEAD
  def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id
@@ -27,12 +28,22 @@ def forget(user)
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
+=======
+
+  # Returns the current logged-in user (if any).
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find_by(id: session[:user_id])
+    end
+  end
+>>>>>>> d810a459bf60867128d482325070112554ad159a
 
   # Returns true if the user is logged in, false otherwise.
   def logged_in?
     !current_user.nil?
   end
 def log_out
+<<<<<<< HEAD
         forget(current_user)
     session.delete(:user_id)
     @current_user = nil
@@ -49,4 +60,9 @@ def log_out
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+=======
+    session.delete(:user_id)
+    @current_user = nil
+  end
+>>>>>>> d810a459bf60867128d482325070112554ad159a
 end

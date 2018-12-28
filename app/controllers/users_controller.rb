@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
    before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
 before_action :admin_user,     only: :destroy
@@ -45,12 +46,35 @@ def destroy
   end
 
 
+=======
+ def show
+    @user = User.find(params[:id])
+  end
+  def new
+     @user = User.new
+  end
+def create
+    @user = User.new(user_params)
+    if @user.save
+      # Handle a successful save.
+      log_in @user
+
+      flash[:success] = "Welcome:)"
+      redirect_to @user
+
+    else
+      render 'new'
+    end
+  end
+
+>>>>>>> d810a459bf60867128d482325070112554ad159a
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+<<<<<<< HEAD
   def logged_in_user
       unless logged_in?
         store_location
@@ -65,4 +89,6 @@ def destroy
 def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+=======
+>>>>>>> d810a459bf60867128d482325070112554ad159a
 end

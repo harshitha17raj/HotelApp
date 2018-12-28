@@ -6,7 +6,17 @@ ruby '2.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
+<<<<<<< HEAD
 
+=======
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '~> 0.18'
+end
+>>>>>>> d810a459bf60867128d482325070112554ad159a
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -63,6 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '3.3.7'
 
+<<<<<<< HEAD
 gem 'faker',          '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
@@ -78,3 +89,9 @@ end
 group :test, :production do
     gem 'pg'
 end
+=======
+gem 'rails-controller-testing'
+
+gem 'bcrypt',         '3.1.12'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+>>>>>>> d810a459bf60867128d482325070112554ad159a

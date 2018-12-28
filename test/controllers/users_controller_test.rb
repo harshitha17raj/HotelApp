@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+<<<<<<< HEAD
 def setup
     @user       = users(:michael)
     @other_user = users(:archer)
@@ -10,10 +11,13 @@ def setup
     assert_redirected_to login_url
   end
 
+=======
+>>>>>>> d810a459bf60867128d482325070112554ad159a
   test "should get new" do
     get signup_path
     assert_response :success
   end
+<<<<<<< HEAD
  test "should redirect edit when logged in as wrong user" do
     log_in_as(@other_user)
     get edit_user_path(@user)
@@ -42,4 +46,7 @@ def setup
     end
     assert_redirected_to root_url
   end
+=======
+
+>>>>>>> d810a459bf60867128d482325070112554ad159a
 end
